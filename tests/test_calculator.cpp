@@ -1,6 +1,6 @@
 #include "calculator.h"
 #include <gtest/gtest.h>
-
+#include <stdexcept>
 TEST(CalculatorTests, testStatus) {
   Calculator calc = Calculator();
   EXPECT_EQ(calc.getStatus(), false);
@@ -18,6 +18,22 @@ TEST(CalculatorTests, testSubtract) {
   Calculator calc = Calculator();
   EXPECT_EQ(calc.subtract(2, 1), 1);
 }
+
+TEST(CalculatorTests, testMultiply) {
+  Calculator calc = Calculator();
+  EXPECT_EQ(calc.multiply(2, 3), 6);
+}
+
+TEST(CalculatorTests, testDivide) {
+  Calculator calc = Calculator();
+  EXPECT_EQ(calc.divide(6, 3), 2);
+}
+
+TEST(CalculatorTests, testDividebyZeroErrorThrow) {
+  Calculator calc = Calculator();
+  EXPECT_THROW(calc.divide(6, 0), std::invalid_argument);
+}
+
 
 int main(int argc, char **argv) {
   Calculator calc = Calculator();

@@ -1,4 +1,5 @@
 #include "calculator.h"
+#include <cmath>
 #include <stdexcept>
 void Calculator::pressRun() { isRunning = !isRunning; }
 double Calculator::add(double first_number, double second_number) {
@@ -18,3 +19,4 @@ double Calculator::divide(double first_number, double second_number) {
   };
   return first_number / second_number;
 }
+double Calculator::square(double number) { return pow(number, 2); }

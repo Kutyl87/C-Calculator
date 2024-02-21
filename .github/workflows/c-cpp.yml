@@ -16,8 +16,8 @@ jobs:
 
       - name: Pull Docker Image
         run: |
-          docker pull pkutyl/cpp_app:latest -t cpp_app
+          docker pull pkutyl/cpp_app:latest
 
       - name: Run Tests
         run: |
-          docker run cpp_app
+          docker run pkutyl/cpp_app

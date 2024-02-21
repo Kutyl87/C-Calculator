@@ -42,7 +42,10 @@ TEST(CalculatorTests, testDividebyZeroErrorThrowMessage) {
     EXPECT_STREQ(e.what(), "Cannot divide by zero!");
   }
 }
-
+TEST(Calculator, testSquare) {
+  Calculator calc = Calculator();
+  EXPECT_EQ(calc.square(2), 4);
+}
 int main(int argc, char **argv) {
   Calculator calc = Calculator();
   ::testing::InitGoogleTest(&argc, argv);

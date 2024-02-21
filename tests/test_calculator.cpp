@@ -34,6 +34,14 @@ TEST(CalculatorTests, testDividebyZeroErrorThrow) {
   EXPECT_THROW(calc.divide(6, 0), std::invalid_argument);
 }
 
+TEST(CalculatorTests, testDividebyZeroErrorThrowMessage) {
+  Calculator calc = Calculator();
+  try {
+    calc.divide(6, 0);
+  } catch (std::invalid_argument &e) {
+    EXPECT_STREQ(e.what(), "Cannot divide by zero!");
+  }
+}
 
 int main(int argc, char **argv) {
   Calculator calc = Calculator();

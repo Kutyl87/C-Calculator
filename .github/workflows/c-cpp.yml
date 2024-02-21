@@ -14,13 +14,10 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
-
-      - name: Build Docker Image
+      - name: Pull Docker Image
         run: |
-          docker build . -t cpp_app
+          docker pull pkutyl/cpp_app:latest
 
       - name: Run Tests
         run: |
-          docker run cpp_app
+          docker run --platform linux/amd64/v8 pkutyl/cpp_app

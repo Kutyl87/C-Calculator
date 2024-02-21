@@ -56,6 +56,10 @@ TEST(CalculatorTests, testSquareWithZero) {
   EXPECT_EQ(calc.square(0), 0);
 }
 
+TEST(CalculatorTests, testSquareLargeNumber) {
+  Calculator calc = Calculator();
+  EXPECT_EQ(calc.square(1000000000), 1e18);
+}
 int main(int argc, char **argv) {
   Calculator calc = Calculator();
   ::testing::InitGoogleTest(&argc, argv);

@@ -20,4 +20,4 @@ jobs:
 
       - name: Run Tests
         run: |
-          docker run pkutyl/cpp_app
+          docker run pkutyl/cpp_app --platform linux/amd64

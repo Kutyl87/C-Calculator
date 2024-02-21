@@ -7,4 +7,5 @@ RUN  mkdir build && cd build && cmake .. && make
 WORKDIR /usr/c++/calculator_app/tests
 RUN  mkdir build && cd build && cmake .. && make
 WORKDIR /usr/c++/calculator_app/tests/build
+RUN chmod +x deployment-service
 CMD ["./exec"]
